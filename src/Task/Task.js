@@ -44,7 +44,7 @@ class task extends React.Component {
 			);
 	}
 
-	render() 
+	render() (
 		const { task } = this.state;
 		return (
 			<div name='task-page'>
@@ -81,7 +81,9 @@ class task extends React.Component {
 				</main>
 			</div>
 		);
-	}
+	)
 }
+	
+
 
 export default task;
