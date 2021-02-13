@@ -33,6 +33,7 @@ export default class Home extends Component {
 
                     NoteTracker's ingenuity is in its searchable notes feature. It's hard keeping track of a password you wrote down 3 months ago on a scrap of paper. With NoteTracker, you can have that kind of information within easy reach, and keep yourself better organized for it!
 				</main>
+
 			</div>
 		);
 	}
