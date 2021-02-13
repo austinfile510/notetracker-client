@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
-import ToDoListPage from './ToDoListPage/ToDoListPage';
+import TasksPage from './TasksPage/TasksPage';
 import AddToDoList from './AddToDoList/AddToDoList';
 import AddTask from './AddTask/AddTask';
 import NotFoundPage from './NotFoundPage/NotFoundPage';
@@ -11,6 +11,7 @@ import LoginPage from './LoginPage/LoginPage';
 
 import TokenService from './services/token-service';
 import AuthApiService from './services/auth-api-service';
+import Task from './Task/Task';
 
 
 export default class App extends Component {
@@ -79,11 +80,7 @@ export default class App extends Component {
 		this.forceUpdate();
 	};
 
-	handleDeleteNote = (noteId) => {
-		this.setState({
-			notes: this.state.notes.filter((note) => note.id !== noteId),
-		});
-	};
+	
 
 	renderMainRoutes() {
 		return (
@@ -92,7 +89,8 @@ export default class App extends Component {
 					<Route exact key={path} path={path} component={ToDoListPage} />
 				))} */}
 				<Route exact path='/' component={Home} />
-				<Route exact path='/to-do-lists' component={ToDoListPage} />
+				<Route path='/tasks/:task_id' component={Task} />
+				<Route exact path='/tasks' component={TasksPage} />
 				<Route path='/add-to-do-list' component={AddToDoList} />
 				<Route path='/add-task' component={AddTask} />
 				<Route path='/login' component={LoginPage} />
