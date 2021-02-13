@@ -25,7 +25,6 @@ export default class LoginPage extends Component {
 				this.props.history.push('/my-tasks');
 			})
 			.catch((e) => {
-				console.log(e);
 				this.setState({ error: e.error });
 			});
 	};
