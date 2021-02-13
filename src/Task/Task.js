@@ -46,6 +46,7 @@ class task extends React.Component {
 			);
 	}
 
+
 	render() {
 		const { task } = this.state;
 		return (
@@ -87,3 +88,4 @@ class task extends React.Component {
 }
 
 export default task;
+
