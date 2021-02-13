@@ -13,7 +13,7 @@ const NoteTrackerApiService = {
 		);
 	},
 
-    getTasks() {
+    getTasksList() {
         return fetch(`${config.API_ENDPOINT}/tasks`, {
 			headers: {
 				authorization: `bearer ${TokenService.getAuthToken()}`,

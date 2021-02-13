@@ -3,16 +3,17 @@ import TokenService from '../services/token-service';
 
 const ApiContext = React.createContext({
   task: [],
-  tasks: [],
+  tasksList: [],
   toDoList: [],
   error: null,
   setError: () => {},
   clearError: () => {},
   setUser: () => {},
   setTask: () => {},
-  setTasks: () => {},
+  setTasksList: () => {},
   setToDoList: () => {},
   clearTaskList: () => {},
+  setSearchTerm: () => {},
   deleteTask: () => {},
   markTask: () => {},
   addList: () => {},
@@ -24,11 +25,16 @@ export default ApiContext;
 export class ApiProvider extends Component {
   state = {
     task: {},
-    tasks: [],
+    tasksList: [],
     user: TokenService.readJwtToken() || {},
     toDoList: [],
     error: null,
+    searchTerm: ''
   };
+
+  setSearchTerm = searchTerm => {
+    this.setState({ searchTerm })
+  }
 
   deleteList = list_id => {
     this.setState({
@@ -46,8 +52,8 @@ export class ApiProvider extends Component {
     this.setState({ task })
   }
 
-  setTasks = tasks => {
-    this.setState({ tasks })
+  setTasksList = tasksList => {
+    this.setState({ tasksList })
   }
 
   setUser = user => {
@@ -82,16 +88,18 @@ export class ApiProvider extends Component {
   render() {
     const value = {
       user: this.state.user,
-      recipeList: this.state.recipeList,
+      task: this.state.task,
       error: this.state.error,
       searchTerm: this.state.searchTerm,
       toDoList: this.state.toDoList,
-      tasks: this.state.tasks,
+      tasksList: this.state.tasksList,
+      searchTerm: this.state.searchTerm,
+      setSearchTerm: this.setSearchTerm,
       setError: this.setError,
       clearError: this.clearError,
       setUser: this.setUser,
       setTask: this.setTask,
-      setTasks: this.setTasks,
+      setTasksList: this.setTasksList,
       addList: this.addList,
       addTask: this.addTask,
       setToDoList: this.setToDoList,

@@ -52,6 +52,7 @@ export default class LoginPage extends Component {
 							<button>Submit</button>
 						</label>
 					</form>
+					<p className='red'>{this.state.error}</p>
 				</main>
 			</div>
 		);

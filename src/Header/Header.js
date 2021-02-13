@@ -15,7 +15,7 @@ export default class Header extends Component {
 	renderLogoutLink() {
 		return (
 			<nav className='Header__logged-in'>
-				<Link to='./to-do-lists'>My tasks</Link>
+				<Link to='./tasks'>My tasks</Link>
 				<Hyph />
 				<Link to='/add-to-do-list'>Create To-Do List</Link>
 				<Hyph />

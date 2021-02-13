@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { format } from 'date-fns'
 import ApiContext from '../contexts/ApiContext'
 import config from '../config'
+import NoteTrackerApiService from '../services/notetracker-api-service'
 
 
 export default class Task extends React.Component {
@@ -15,18 +16,7 @@ export default class Task extends React.Component {
     e.preventDefault()
     const noteId = this.props.id
 
-    fetch(`${config.API_ENDPOINT}/notes/${noteId}`, {
-      method: 'DELETE',
-      headers: {
-        'content-type': 'application/json',
-        'authorization': `bearer ${config.API_KEY}`
-      },
-    })
-      .then(res => {
-        if (!res.ok)
-          return res.json().then(e => Promise.reject(e))
-        return res.json()
-      })
+    NoteTrackerApiService
       .then(() => {
         this.context.deleteNote(noteId)
         // allow parent to perform extra behaviour
