@@ -17,7 +17,7 @@ export default class Header extends Component {
 			<nav className='Header__logged-in'>
 				<Link to='./tasks'>My tasks</Link>
 				<Hyph />
-				<Link to='/tasks'>Create To-Do List</Link>
+				<Link to='/add-to-do-list'>Create To-Do List</Link>
 				<Hyph />
 				<Link to='/add-task'>Create Task</Link>
 				<Hyph />

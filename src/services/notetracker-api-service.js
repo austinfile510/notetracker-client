@@ -59,8 +59,8 @@ const NoteTrackerApiService = {
 		);
 	},
 
-	deleteTask(task_id) {
-		return fetch(`${config.API_ENDPOINT}/tasks/${task_id}`, {
+	deleteTask(taskId) {
+		return fetch(`${config.API_ENDPOINT}/tasks/${taskId}`, {
 			method: 'DELETE',
 			headers: {
 				authorization: `bearer ${TokenService.getAuthToken()}`,

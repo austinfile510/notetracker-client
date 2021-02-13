@@ -13,7 +13,6 @@ import TokenService from './services/token-service';
 import AuthApiService from './services/auth-api-service';
 import Task from './Task/Task';
 
-
 export default class App extends Component {
 	state = {
 		tasks: [],
@@ -26,12 +25,20 @@ export default class App extends Component {
 		return { hasError: true };
 	}
 
+	deleteBookmark = (bookmarkId) => {
+		const newBookmarks = this.state.bookmarks.filter(
+			(bm) => bm.id !== bookmarkId
+		);
+		this.setState({
+			bookmarks: newBookmarks,
+		});
+	};
+
 	componentDidMount() {
 		/*
       set the function (callback) to call when a user goes idle
       we'll set this to logout a user when they're idle
     */
-		
 
 		/* if a user is logged in */
 		if (TokenService.hasAuthToken()) {
@@ -41,7 +48,6 @@ export default class App extends Component {
         if the user doesn't trigger one of these event listeners,
           the idleCallback (logout) will be invoked
       */
-		
 
 			/*
         Tell the token service to read the JWT, looking at the exp value
@@ -59,7 +65,7 @@ export default class App extends Component {
       when the app unmounts,
       stop the event listeners that auto logout (clear the token from storage)
     */
-		
+
 		/*
       and remove the refresh endpoint request
     */
@@ -72,7 +78,7 @@ export default class App extends Component {
 		/* remove any queued calls to the refresh endpoint */
 		TokenService.clearCallbackBeforeExpiry();
 		/* remove the timeouts that auto logout when idle */
-		
+
 		/*
       react won't know the token has been removed from local storage,
       so we need to tell React to rerender
@@ -80,7 +86,6 @@ export default class App extends Component {
 		this.forceUpdate();
 	};
 
-	
 
 	renderMainRoutes() {
 		return (

@@ -21,7 +21,7 @@ export default class AddToDoList extends Component {
     NoteTrackerApiService.addList(list)
       .then(list => {
         this.context.addList(list)
-        this.props.history.push(`/`)
+        this.props.history.push(`/tasks`)
       })
       .catch(error => {
         console.error({ error })
