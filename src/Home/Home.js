@@ -21,7 +21,7 @@ export default class Home extends Component {
 					<h2>Welcome to NoteTracker!</h2>
 					<p>
 						NoteTracker is designed with a user-first experience in mind. Keep track of what's
-						important to you. Add and remove tasks easily. Never miss another
+						important to you. Add and search for important information you need to keep on hand. Never miss another
 						deadline!
 					</p>
 
