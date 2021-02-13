@@ -35,15 +35,21 @@ export default class TaskListItem extends Component {
 		onDeleteTask: () => {},
 	};
 
+	handleClickDelete = (e) => {
+		const { taskId } = this.props.match.params;
+		NoteTrackerApiService.deleteTask(taskId).then(() => {
+			this.props.history.push('/my-tasks');
+		});
+	};
+
 	render() {
 		const { task } = this.props;
 		return (
 			<ApiContext.Consumer>
 				{(context) => (
 					<div name='TaskListItem' className='TaskListItem__container'>
-						{/* <Link
-					to={`/tasks/${task.id}`}> */}
-						<h4>{task.title}</h4>
+						{/* <Link to={`/tasks/${task.id}`}> */}
+							<h4>{task.title}</h4>
 						{/* </Link> */}
 						<span className='shadow'>
 							<p>{task.content}</p>
@@ -53,12 +59,14 @@ export default class TaskListItem extends Component {
 							<p>{Moment(task.modified).format('MMMM Do, YYYY')}</p>
 						</span>
 
-						<button
+						{/* <button TO DO - Delete Button implementation.
 							className='delete-button'
-							onClick={() => deleteTaskRequest(this.props.id, context.deleteTask)}
+							onClick={() =>
+								deleteTaskRequest(this.props.id, context.deleteTask)
+							}
 						>
 							Delete
-						</button>
+						</button> */}
 					</div>
 				)}
 			</ApiContext.Consumer>

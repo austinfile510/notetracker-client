@@ -1,59 +1,88 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { format } from 'date-fns'
-import ApiContext from '../contexts/ApiContext'
-import config from '../config'
-import NoteTrackerApiService from '../services/notetracker-api-service'
+import React from 'react';
+import NoteTrackerApiService from '../services/notetracker-api-service';
+import Header from '../Header/Header';
+import Moment from 'moment';
 
+import ApiContext from '../contexts/ApiContext';
 
-export default class Task extends React.Component {
-  static defaultProps ={
-    onDeleteNote: () => {},
-  }
-  static contextType = ApiContext;
+class task extends React.Component {
+	state = {
+		task: {},
+		user: {},
+	};
 
-  handleClickDelete = e => {
-    e.preventDefault()
-    const noteId = this.props.id
+	static contextType = ApiContext;
 
-    NoteTrackerApiService
-      .then(() => {
-        this.context.deleteNote(noteId)
-        // allow parent to perform extra behaviour
-        this.props.onDeleteNote(noteId)
-      })
-      .catch(error => {
-        console.error({ error })
-      })
-  }
+	static defaultProps = {
+		onDeleteTask: () => {},
+	};
 
-  render() {
-    const { title, id, modified } = this.props
-    return (
-      <div className='Note'>
-        <h2 className='Note__title'>
-          <Link to={`/notes/${id}`}>
-            {title}
-          </Link>
-        </h2>
-        <button
-          className='Note__delete'
-          type='button'
-          onClick={this.handleClickDelete}
-        >
-          {' '}
-          remove
-        </button>
-        <div className='Note__dates'>
-          <div className='Note__dates-modified'>
-            Modified
-            {' '}
-            <span className='Date'>
-              {format(modified, 'Do MMM YYYY')}
-            </span>
-          </div>
-        </div>
-      </div>
-    )
-  }
+	componentDidMount() {
+		const { taskId } = this.props.match.params;
+		NoteTrackerApiService.getTask(taskId).then((task) =>
+			this.setState({ task })
+		);
+	}
+
+	handleClickDelete = (e) => {
+		const { taskId } = this.props.match.params;
+		NoteTrackerApiService.deleteTask(taskId).then(() => {
+			this.props.history.push('/my-tasks');
+		});
+	};
+
+	renderDeleteButton() {
+		// TO DO - Implement button so it only shows when the registered logged in user matches the task's user ID
+		const { taskId } = this.props.match.params;
+		if (this.context.user.user_id !== this.state.task.user_id) {
+			return;
+		} else
+			return (
+				<button className='delete-button' onClick={() => this.handleClickDelete(taskId)}>
+					Delete task
+				</button>
+			);
+	}
+
+	render() {
+		console.log(this.context);
+		const { task } = this.state;
+		return (
+			<div name='task-page'>
+				<main className='task__container shadow' role='main'>
+					<header>
+          <Header />
+					</header>
+
+					<h2 style={{color: 'darkgreen'}}>{task.title}</h2>
+
+					<h3>task Description:</h3>
+
+					<p>{task.description}</p>
+
+					<h3>Ingredients:</h3>
+
+					<p>{task.ingredients}</p>
+
+					<h3>Instructions:</h3>
+
+					<p>{task.instructions}</p>
+
+					<h3>task Type:</h3>
+					<p>{task.meal_type}</p>
+
+					<h3>Author:</h3>
+					<p>{task.author}</p>
+
+					<h4>Date Modified:</h4>
+
+					<p>{Moment(task.date_modified).format('MMMM Do, YYYY')}</p>
+
+					{this.renderDeleteButton()}
+				</main>
+			</div>
+		);
+	}
 }
+
+export default task;
