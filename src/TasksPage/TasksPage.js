@@ -10,8 +10,34 @@ import Select from 'react-select';
 import SearchBar from '../SearchBar/SearchBar';
 import TaskListItem from '../TaskListItem/TaskListItem';
 
+function deleteTaskRequest(taskId, callback) {
+	NoteTrackerApiService.deleteTask()
+		.then((res) => {
+			if (!res.ok) {
+				return res.json().then((error) => {
+					throw error;
+				});
+			}
+			return res.json();
+		})
+		.then((data) => {
+			callback(taskId);
+		})
+		.catch((error) => {
+			console.error(error);
+		});
+}
 export default class TasksPage extends React.Component {
+	state = {
+		task: {},
+		user: {},
+	};
+
 	static contextType = ApiContext;
+
+	static defaultProps = {
+		onDeleteRecipe: () => {},
+	};
 
 	componentDidMount() {
 		this.context.clearError();
@@ -19,6 +45,7 @@ export default class TasksPage extends React.Component {
 			.then(this.context.setTasksList)
 			.catch(this.context.setError);
 	}
+
 	filterTasks = (tasksList, searchTerm) => {
 		if (!searchTerm) {
 			return tasksList;
@@ -40,6 +67,8 @@ export default class TasksPage extends React.Component {
 		const { error, tasksList } = this.context;
 
 		return (
+			<ApiContext.Consumer>
+			{(context) => (
 			<div>
 				<Header />
 				<section className='TasksPage'>
@@ -48,14 +77,17 @@ export default class TasksPage extends React.Component {
 					<SearchBar />
 
 					<Section list className='MyTasksPage'>
+					
 						{error ? (
 							<p className='red'>There was an error, try again</p>
 						) : (
 							this.renderTasks()
-						)}
+						)} 
 					</Section>
 				</section>
 			</div>
+			)}
+			</ApiContext.Consumer>
 		);
 	}
 }

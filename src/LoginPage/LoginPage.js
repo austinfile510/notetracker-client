@@ -22,7 +22,7 @@ export default class LoginPage extends Component {
 		AuthApiService.postLogin(loginCredentials)
 			.then(() => {
 				this.context.setUser(TokenService.readJwtToken());
-				this.props.history.push('/to-do-lists');
+				this.props.history.push('/tasks');
 			})
 			.catch((e) => {
 				console.log(e);

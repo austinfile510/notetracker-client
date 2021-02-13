@@ -31,7 +31,7 @@ export default class AddTask extends Component {
 	NoteTrackerApiService.addTask(newTask)
 			.then((task) => {
 				this.context.addTask(task);
-				this.props.history.push(`/`);
+				this.props.history.push(`/tasks`);
 			})
 			.catch((error) => {
 				console.error({ error });
