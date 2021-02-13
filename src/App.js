@@ -95,7 +95,7 @@ export default class App extends Component {
 				))} */}
 				<Route exact path='/' component={Home} />
 				<Route path='/tasks/:task_id' component={Task} />
-				<Route exact path='/tasks' component={TasksPage} />
+				<Route exact path='/my-tasks' component={TasksPage} />
 				<Route path='/add-to-do-list' component={AddToDoList} />
 				<Route path='/add-task' component={AddTask} />
 				<Route path='/login' component={LoginPage} />

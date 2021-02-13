@@ -60,7 +60,9 @@ export default class TasksPage extends React.Component {
 	renderTasks() {
 		const { tasksList = [], searchTerm } = this.context;
 		const filteredTasks = this.filterTasks(tasksList, searchTerm);
-		return filteredTasks.map((task) => <TaskListItem key={task.id} task={task} />);
+		return filteredTasks.map((task) => (
+			<TaskListItem key={task.id} task={task} />
+		));
 	}
 
 	render() {
@@ -68,25 +70,24 @@ export default class TasksPage extends React.Component {
 
 		return (
 			<ApiContext.Consumer>
-			{(context) => (
-			<div>
-				<Header />
-				<section className='TasksPage'>
-					<h2>My Tasks</h2>
+				{(context) => (
+					<div>
+						<Header />
+						<section className='TasksPage'>
+							<h2>My Tasks</h2>
 
-					<SearchBar />
+							<SearchBar />
 
-					<Section list className='MyTasksPage'>
-					
-						{error ? (
-							<p className='red'>There was an error, try again</p>
-						) : (
-							this.renderTasks()
-						)} 
-					</Section>
-				</section>
-			</div>
-			)}
+							<Section list className='MyTasksPage'>
+								{error ? (
+									<p className='red'>There was an error, try again</p>
+								) : (
+									this.renderTasks()
+								)}
+							</Section>
+						</section>
+					</div>
+				)}
 			</ApiContext.Consumer>
 		);
 	}
