@@ -48,9 +48,9 @@ export default class TaskListItem extends Component {
 			<ApiContext.Consumer>
 				{(context) => (
 					<div name='TaskListItem' className='TaskListItem__container'>
-						<Link to={`/tasks/${task.id}`}>
+						{/* <Link to={`/tasks/${task.id}`}> */}
 							<h4>{task.title}</h4>
-						</Link>
+						{/* </Link> */}
 						<span className='shadow'>
 							<p>{task.content}</p>
 						</span>

@@ -12,6 +12,7 @@ import LoginPage from './LoginPage/LoginPage';
 import TokenService from './services/token-service';
 import AuthApiService from './services/auth-api-service';
 import Task from './Task/Task';
+import './index.css';
 
 export default class App extends Component {
 	state = {
