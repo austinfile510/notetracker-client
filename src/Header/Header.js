@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Hyph } from '../Utils/Utils';
 import TokenService from '../services/token-service';
+import '../index.css';
 
 
 export default class Header extends Component {
@@ -41,7 +42,7 @@ export default class Header extends Component {
 	render() {
 		return (
 			<nav className='Header'>
-				<h1>
+				<h1 style= {{"text-decoration-line": "none" }} className='main-heading'>
 					<Link to='/'>NoteTracker</Link>
 				</h1>
 				{TokenService.hasAuthToken()

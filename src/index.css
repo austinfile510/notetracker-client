@@ -1,7 +1,27 @@
 /* Headers and Titles */
 
 h1 {
-  font-family: 'Merriweather', serif;
+	font-family: 'Merriweather', serif;
+	font-size: 45px;
+  text-decoration: none;
+
+}
+
+
+
+h2 {
+	font-family: 'Merriweather', serif;
+  color: #A67A6A;
+  font-size: 35px;
+}
+
+h3 {
+	font-family: 'Merriweather', serif;
+	color: #A67A6A;
+	max-width: 95%;
+	padding: 2%;
+	justify-content: center;
+  font-size: 30px;
 }
 
 /* Page Text */
@@ -9,29 +29,129 @@ h1 {
 /* Nav Header */
 nav,
 .Nav_logged-in {
-  
 }
 
 /* Containers and Background */
 
+.TaskListItem {
+  border: 5px;
+}
+
+body {
+  background-color: #f2e0d9;
+}
+
+/* Forms */
+
+.AddList {
+	justify-content: center;
+	flex-direction: column;
+	display: flex;
+	max-width: 200px;
+	margin: auto;
+	font-size: 20px;
+}
+
+select {
+  width: 200px;
+}
+
+.AddTask {
+	justify-content: center;
+	flex-direction: column;
+	display: flex;
+	max-width: 200px;
+	margin: auto;
+	font-size: 20px;
+}
 /* Registration Form */
+
+.registration-form__container {
+	justify-content: center;
+	flex-direction: column;
+	display: flex;
+	max-width: 200px;
+	margin: auto;
+	font-size: 20px;
+}
 
 /* Login Form */
 
-/* Search From */
+.login-form__container {
+	justify-content: center;
+	flex-direction: column;
+	display: flex;
+	max-width: 250px;
+	margin: auto;
+	font-size: 20px;
+}
+
+/* Search Form */
+
+.search-form__container {
+	justify-content: center;
+	flex-direction: column;
+	display: flex;
+	max-width: 200px;
+	margin: auto;
+	font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #18453b;
+  shadow: 2px 3 px 4px black;
+}
 
 /* Text Area */
+
+.task-content-input {
+  max-width: 300px;
+  min-width: 150px;
+  justify-content: center;
+
+  
+}
+
+.search-bar {
+  font-family: 'Source Sans Pro', sans-serif;;
+}
+
+/* Button */
+
+button {
+	justify-content: center;
+	float: center;
+	width: 125px;
+	height: 30px;
+	display: flex;
+	margin: auto;
+	font-size: 16px;
+}
+
+button {
+	justify-content: center;
+	float: center;
+	width: 125px;
+	height: 30px;
+	display: flex;
+	margin: auto;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+}
 
 /* App */
 
 .App {
-flex: 1;
-flex-direction: column;
+	flex: 1;
+	flex-direction: column;
+	text-align: center;
+	font-family: 'Nunito', sans-serif;
 }
 
 /* Error Message Text - Red */
 
 .red {
-color: red;
-text-shadow: 2px 2px 2px black, 2px 3px 0px black;
+	color: red;
+	text-shadow: 2px 2px 2px black, 2px 3px 0px black;
 }

@@ -73,7 +73,7 @@ export default class TasksPage extends React.Component {
 				{(context) => (
 					<div>
 						<Header />
-						<section className='TasksPage'>
+						<section className='search-form__container'>
 							<h2>My Tasks</h2>
 
 							<SearchBar />

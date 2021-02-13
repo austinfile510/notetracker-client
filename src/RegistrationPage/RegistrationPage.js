@@ -24,7 +24,6 @@ export default class RegistrationPage extends Component {
 				this.props.history.push('/login');
 			})
 			.catch((e) => {
-				console.log(e);
 				this.setState({ error: e.error });
 			});
 	};

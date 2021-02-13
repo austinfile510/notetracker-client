@@ -44,8 +44,7 @@ class task extends React.Component {
 			);
 	}
 
-	render() {
-		console.log(this.context);
+	render() 
 		const { task } = this.state;
 		return (
 			<div name='task-page'>

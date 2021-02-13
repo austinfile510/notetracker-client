@@ -32,11 +32,11 @@ export default class AddToDoList extends Component {
     return (<div>
     <Header />
       <section className='AddList'>
-        <h2>Create a new List</h2>
+        <h2>Create a New List</h2>
         <NoteTrackerForm onSubmit={this.handleSubmit}>
           <div className='field'>
             <label htmlFor='list-name-input'>
-              Name
+              Name: 
             </label>
             <input type='text' id='list-name-input' name='list-name' />
           </div>
