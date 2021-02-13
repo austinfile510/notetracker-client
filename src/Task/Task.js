@@ -32,28 +32,30 @@ class task extends React.Component {
 	};
 
 	renderDeleteButton() {
-		// TO DO - Implement button so it only shows when the registered logged in user matches the task's user ID
 		const { taskId } = this.props.match.params;
 		if (this.context.user.user_id !== this.state.task.user_id) {
 			return;
 		} else
 			return (
-				<button className='delete-button' onClick={() => this.handleClickDelete(taskId)}>
+				<button
+					className='delete-button'
+					onClick={() => this.handleClickDelete(taskId)}
+				>
 					Delete task
 				</button>
 			);
 	}
 
-	render() (
+	render() {
 		const { task } = this.state;
 		return (
 			<div name='task-page'>
 				<main className='task__container shadow' role='main'>
 					<header>
-          <Header />
+						<Header />
 					</header>
 
-					<h2 style={{color: 'darkgreen'}}>{task.title}</h2>
+					<h2 style={{ color: 'darkgreen' }}>{task.title}</h2>
 
 					<h3>task Description:</h3>
 
@@ -81,9 +83,7 @@ class task extends React.Component {
 				</main>
 			</div>
 		);
-	)
+	}
 }
-	
-
 
 export default task;
