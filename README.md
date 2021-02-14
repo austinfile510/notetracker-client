@@ -30,6 +30,6 @@ Password: DouglasAdams42!
 
 ### Technology Used
 
-This project was is a React application that uses [Create React App](https://github.com/facebook/create-react-app) and was built with Node.JS and NPM. [JWT](https://jwt.io/) is used for user authentication.
+This project is a React application that uses [Create React App](https://github.com/facebook/create-react-app) and was built with Node.JS and NPM. [JWT](https://jwt.io/) is used for user authentication.
 
 Additional Packages used: Moment, Enzyme, Classnames, dotenv
