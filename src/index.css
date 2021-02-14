@@ -26,12 +26,6 @@ h3 {
 
 input {
 	font-family: 'Source Sans Pro', sans-serif;
-
-}
-
-/* Nav Header */
-nav,
-.Nav_logged-in {
 }
 
 /* Containers and Background */
@@ -41,7 +35,7 @@ nav,
 }
 
 body {
-	background-color: #51EDDD;
+	background-color: #51eddd;
 }
 
 /* Forms */
@@ -103,7 +97,6 @@ select {
 a {
 	text-decoration: none;
 	color: #704919;
-	shadow: 2px 3 px 4px black;
 }
 
 /* Text Area */

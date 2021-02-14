@@ -23,12 +23,10 @@ You can get started by creating a user account at the site's Registration page. 
 If you'd like to test the app out before making an account, use the following credentials:
 
 Username: Thanks4AllTheFish
+
 Password: DouglasAdams42!
 
-### Technology Used
 ### Technology Used
 This project was is a React application that uses [Create React App](https://github.com/facebook/create-react-app) and was built using Node.JS and NPM. [JWT](https://jwt.io/) is used for user authentication.
 
 Additional Packages used: Moment, Enzyme, Classnames, dotenv
-
-All images are public domain and provided by Unsplash.com
