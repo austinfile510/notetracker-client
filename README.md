@@ -2,7 +2,7 @@
 
 A Create-React-App by Austin File
 
-App Screenshot: https://imgur.com/6kKPX5l
+App Screenshot: https://imgur.com/a/nDmlLTw
 
 ## Live App: 
 https://notetracker-client.vercel.app/
