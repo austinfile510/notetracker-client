@@ -20,7 +20,9 @@ export default class SearchBar extends React.Component {
 		return (
 			<div className='search-form__container shadow'>
 				<form name='search-bar' onSubmit={this.handleSearch}>
-					<label htmlFor='search-bar'><h3>Search: </h3></label>
+					<label htmlFor='search-bar'>
+						<h3>Search: </h3>
+					</label>
 					<input
 						required
 						type='text'
