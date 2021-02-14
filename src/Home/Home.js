@@ -24,12 +24,13 @@ export default class Home extends Component {
 						track of what's important to you. Add and search for important
 						information you need to keep on hand. Never miss another deadline!
 					</p>
-				
-						<h3>Getting Started</h3>
-					
+
+					<h3>Getting Started</h3>
+
 					<p>
 						To get started using NoteTracker, simply sign up for an account by
-						clicking the link above and get started using the platform today!.
+						clicking the link above. Create a to-do list to organize a group of
+						notes, then add a note to that list.
 					</p>
 					<p>
 						NoteTracker's ingenuity is in its searchable notes feature. It's
@@ -44,7 +45,10 @@ export default class Home extends Component {
 					</p>
 
 					<Link to='/register'>
-					<p>Get started keeping track of everything you need by signing up for an account here!</p>
+						<p style={{ fontWeight: 'bold' }}>
+							Get started keeping track of everything you need by signing up for
+							an account here!
+						</p>
 					</Link>
 				</main>
 			</div>
