@@ -18,7 +18,7 @@ Users can add and edit tasks they add to each list, and both can be deleted at a
 
 ## Documentation
 
-Please take a look [here] for how to use the API associated with this app.
+Please take a look [here](https://github.com/austinfile510/recipe-keeper-server) for how to use the API associated with this app.
 
 You can get started by creating a user account at the site's Registration page. After logging in, you can create to-do lists to group tasks together. You can then search by individual tasks on the MyTasks page.
 
