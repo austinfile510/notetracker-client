@@ -24,9 +24,9 @@ export default class Home extends Component {
 						track of what's important to you. Add and search for important
 						information you need to keep on hand. Never miss another deadline!
 					</p>
-					<Link to='/register'>
+				
 						<h3>Getting Started</h3>
-					</Link>
+					
 					<p>
 						To get started using NoteTracker, simply sign up for an account by
 						clicking the link above and get started using the platform today!.
@@ -42,6 +42,10 @@ export default class Home extends Component {
 						Take advantage of NoteTracker's search system, which lets you search
 						by an individual task. Never lose track of your notes again!
 					</p>
+
+					<Link to='/register'>
+					<p>Get started keeping track of everything you need by signing up for an account here!</p>
+					</Link>
 				</main>
 			</div>
 		);
