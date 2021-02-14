@@ -49,7 +49,7 @@ export default class TaskListItem extends Component {
 				{(context) => (
 					<div name='TaskListItem' className='TaskListItem__container'>
 						{/* <Link to={`/tasks/${task.id}`}> */}
-							<h4>{task.title}</h4>
+						<h4>{task.title}</h4>
 						{/* </Link> */}
 						<span className='shadow'>
 							<p>{task.content}</p>

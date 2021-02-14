@@ -10,23 +10,6 @@ import Select from 'react-select';
 import SearchBar from '../SearchBar/SearchBar';
 import TaskListItem from '../TaskListItem/TaskListItem';
 
-function deleteTaskRequest(taskId, callback) {
-	NoteTrackerApiService.deleteTask()
-		.then((res) => {
-			if (!res.ok) {
-				return res.json().then((error) => {
-					throw error;
-				});
-			}
-			return res.json();
-		})
-		.then((data) => {
-			callback(taskId);
-		})
-		.catch((error) => {
-			console.error(error);
-		});
-}
 export default class TasksPage extends React.Component {
 	state = {
 		task: {},
@@ -53,7 +36,7 @@ export default class TasksPage extends React.Component {
 
 		return tasksList.filter((task) => {
 			const taskTitle = task.title.toLowerCase();
-			return taskTitle.includes(searchTerm.toLowerCase());
+			return taskTitle.includes(searchTerm.toLowerCase()) || taskTitle.includes();
 		});
 	};
 
@@ -69,26 +52,20 @@ export default class TasksPage extends React.Component {
 		const { error, tasksList } = this.context;
 
 		return (
-			<ApiContext.Consumer>
-				{(context) => (
-					<div>
-						<Header />
-						<section className='search-form__container'>
-							<h2>My Tasks</h2>
-
-							<SearchBar />
-
-							<Section list className='MyTasksPage'>
-								{error ? (
-									<p className='red'>There was an error, try again</p>
-								) : (
-									this.renderTasks()
-								)}
-							</Section>
-						</section>
-					</div>
-				)}
-			</ApiContext.Consumer>
+			<div>
+				<Header />
+				<section className='search-form__container'>
+					<h2>My Tasks</h2>
+					<SearchBar />
+					<Section list className='MyTasksPage'>
+						{error ? (
+							<p className='red'>There was an error, try again</p>
+						) : (
+							this.renderTasks()
+						)}
+					</Section>
+				</section>
+			</div>
 		);
 	}
 }

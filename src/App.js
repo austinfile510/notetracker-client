@@ -87,7 +87,6 @@ export default class App extends Component {
 		this.forceUpdate();
 	};
 
-
 	renderMainRoutes() {
 		return (
 			<Switch>

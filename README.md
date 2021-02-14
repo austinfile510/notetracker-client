@@ -16,11 +16,18 @@ Users can add and edit tasks they add to each list, and both can be deleted at a
 
 ## Documentation
 
-TBA
+Please take a look [here] for how to use the API associated with this app.
+
+You can get started by creating a user account at the site's Registration page. After logging in, you can create to-do lists to group tasks together. You can then search by individual tasks on the MyTasks page.
+
+If you'd like to test the app out before making an account, use the following credentials:
+
+Username: Thanks4AllTheFish
+Password: DouglasAdams42!
 
 ### Technology Used
 ### Technology Used
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). [JWT](https://jwt.io/) is used for user authentication.
+This project was is a React application that uses [Create React App](https://github.com/facebook/create-react-app) and was built using Node.JS and NPM. [JWT](https://jwt.io/) is used for user authentication.
 
 Additional Packages used: Moment, Enzyme, Classnames, dotenv
 

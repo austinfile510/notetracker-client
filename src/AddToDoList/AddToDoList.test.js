@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import AddToDoList from './AddToDoList'
+import AddToDoList from './AddToDoList';
 
 describe('Home component', () => {
 	it('renders without crashing', () => {

@@ -29,12 +29,11 @@ export default class LoginPage extends Component {
 			});
 	};
 
-
 	render() {
 		return (
 			<div name='login-main' className='LoginPage__container'>
 				<Header />
-				<h2 className='shadow'>User Login</h2>
+				<h2 className='shadow'> User Login</h2>
 				<main>
 					<form
 						name='login-form'

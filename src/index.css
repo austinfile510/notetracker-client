@@ -3,28 +3,31 @@
 h1 {
 	font-family: 'Merriweather', serif;
 	font-size: 45px;
-  text-decoration: none;
-
+	text-decoration: none;
+	color: #704919;
 }
-
-
 
 h2 {
 	font-family: 'Merriweather', serif;
-  color: #A67A6A;
-  font-size: 35px;
+	color: #704919;
+	font-size: 35px;
 }
 
 h3 {
 	font-family: 'Merriweather', serif;
-	color: #A67A6A;
+	color: #704919;
 	max-width: 95%;
 	padding: 2%;
 	justify-content: center;
-  font-size: 30px;
+	font-size: 30px;
 }
 
 /* Page Text */
+
+input {
+	font-family: 'Source Sans Pro', sans-serif;
+
+}
 
 /* Nav Header */
 nav,
@@ -34,11 +37,11 @@ nav,
 /* Containers and Background */
 
 .TaskListItem {
-  border: 5px;
+	border: 5px;
 }
 
 body {
-  background-color: #f2e0d9;
+	background-color: #51EDDD;
 }
 
 /* Forms */
@@ -53,7 +56,7 @@ body {
 }
 
 select {
-  width: 200px;
+	width: 200px;
 }
 
 .AddTask {
@@ -98,23 +101,21 @@ select {
 }
 
 a {
-  text-decoration: none;
-  color: #18453b;
-  shadow: 2px 3 px 4px black;
+	text-decoration: none;
+	color: #704919;
+	shadow: 2px 3 px 4px black;
 }
 
 /* Text Area */
 
 .task-content-input {
-  max-width: 300px;
-  min-width: 150px;
-  justify-content: center;
-
-  
+	max-width: 300px;
+	min-width: 150px;
+	justify-content: center;
 }
 
 .search-bar {
-  font-family: 'Source Sans Pro', sans-serif;;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 /* Button */

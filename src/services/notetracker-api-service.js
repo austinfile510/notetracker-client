@@ -13,15 +13,15 @@ const NoteTrackerApiService = {
 		);
 	},
 
-    getTasksList() {
-        return fetch(`${config.API_ENDPOINT}/tasks`, {
+	getTasksList() {
+		return fetch(`${config.API_ENDPOINT}/tasks`, {
 			headers: {
 				authorization: `bearer ${TokenService.getAuthToken()}`,
 			},
 		}).then((res) =>
 			!res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
 		);
-    },
+	},
 
 	getTaskById(task_id) {
 		return fetch(`${config.API_ENDPOINT}/tasks/${task_id}`, {
@@ -82,10 +82,10 @@ const NoteTrackerApiService = {
 			method: 'POST',
 
 			headers: {
-                'content-type': 'application/json',
+				'content-type': 'application/json',
 				Authorization: `Bearer ${TokenService.getAuthToken()}`,
 			},
-            body: JSON.stringify(newList),
+			body: JSON.stringify(newList),
 		}).then((res) =>
 			!res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
 		);

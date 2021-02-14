@@ -13,12 +13,11 @@ export default class AddTask extends Component {
 	};
 	static contextType = ApiContext;
 
-  componentDidMount () {
-    NoteTrackerApiService.getLists()
-    .then(toDoList => {
-      this.context.setToDoList(toDoList)
-    })
-  }
+	componentDidMount() {
+		NoteTrackerApiService.getLists().then((toDoList) => {
+			this.context.setToDoList(toDoList);
+		});
+	}
 
 	handleSubmit = (e) => {
 		e.preventDefault();
@@ -28,7 +27,7 @@ export default class AddTask extends Component {
 			list_id: e.target['task-list-id'].value,
 			modified: new Date(),
 		};
-	NoteTrackerApiService.addTask(newTask)
+		NoteTrackerApiService.addTask(newTask)
 			.then((task) => {
 				this.context.addTask(task);
 				this.props.history.push(`/my-tasks`);
@@ -43,13 +42,18 @@ export default class AddTask extends Component {
 		return (
 			<div>
 				<Header />
-        
+
 				<section className='AddTask'>
 					<h2>Create a Task</h2>
 					<NoteTrackerForm onSubmit={this.handleSubmit}>
 						<div className='field'>
 							<label htmlFor='task-name-input'>Name</label>
-							<input required type='text' id='task-name-input' name='task-name' />
+							<input
+								required
+								type='text'
+								id='task-name-input'
+								name='task-name'
+							/>
 						</div>
 						<div className='field'>
 							<label htmlFor='task-content-input'>Content</label>

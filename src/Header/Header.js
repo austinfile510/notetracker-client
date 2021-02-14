@@ -4,19 +4,17 @@ import { Hyph } from '../Utils/Utils';
 import TokenService from '../services/token-service';
 import '../index.css';
 
-
 export default class Header extends Component {
 	handleLogoutClick = () => {
 		TokenService.clearAuthToken();
 		/* when logging out, clear the callbacks to the refresh api and idle auto logout */
 		TokenService.clearCallbackBeforeExpiry();
-		
 	};
 
 	renderLogoutLink() {
 		return (
 			<nav className='Header__logged-in'>
-				<Link to='./my-tasks'>My tasks</Link>
+				<Link to='./my-tasks'>My Tasks</Link>
 				<Hyph />
 				<Link to='/add-to-do-list'>Create To-Do List</Link>
 				<Hyph />
@@ -42,7 +40,7 @@ export default class Header extends Component {
 	render() {
 		return (
 			<nav className='Header'>
-				<h1 style= {{"text-decoration-line": "none" }} className='main-heading'>
+				<h1 style={{ 'text-decoration-line': 'none' }} className='main-heading'>
 					<Link to='/'>NoteTracker</Link>
 				</h1>
 				{TokenService.hasAuthToken()
